@@ -1,320 +1,436 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Fortivo</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        .container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #1a1a1a;
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-        h2 {
-            color: #1a1a1a;
-            font-size: 24px;
-            margin-top: 40px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 10px;
-        }
-        h3 {
-            color: #333;
-            font-size: 18px;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-        .last-updated {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 30px;
-        }
-        p {
-            margin-bottom: 15px;
-        }
-        ul {
-            margin-bottom: 15px;
-            padding-left: 30px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        strong {
-            color: #1a1a1a;
-        }
-        em {
-            color: #555;
-        }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #f8f8f8;
-            font-weight: bold;
-        }
-        .summary {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-        .toc {
-            background-color: #f0f0f0;
-            padding: 20px;
-            border-radius: 5px;
-            margin: 30px 0;
-        }
-        .toc a {
-            display: block;
-            margin: 8px 0;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polityka prywatności — Fortivo</title>
+  <style>
+    :root {
+      --bg: #1C2227;
+      --card: #2A2F37;
+      --accent: #E0FE10;
+      --text: #E8EAED;
+      --muted: #9AA3AD;
+      --border: #3A424B;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      font-size: 17px;
+    }
+
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    h1 {
+      font-size: 30px;
+      line-height: 1.25;
+      margin: 0 0 8px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin: 44px 0 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 28px 0 8px;
+      color: var(--accent);
+    }
+
+    .updated {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 32px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin: 24px 0;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .card ul {
+      margin: 8px 0 0;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0;
+      font-size: 15px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    strong {
+      color: #fff;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .wrap {
+        padding: 28px 16px 60px;
+      }
+
+      table,
+      th,
+      td {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>PRIVACY POLICY</h1>
-        <p class="last-updated">Last updated February 08, 2026</p>
+  <div class="wrap">
 
-        <p>This Privacy Notice for <strong>Mateusz Kamiński</strong> (doing business as <strong>Astilion</strong>) ("we," "us," or "our"), describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you:</p>
+    <h1>Polityka prywatności aplikacji Fortivo</h1>
+    <p class="updated">Ostatnia aktualizacja: 26 sierpnia 2026</p>
 
-        <ul>
-            <li>Download and use our mobile application (<strong>Fortivo</strong>), or any other application of ours that links to this Privacy Notice</li>
-            <li>Engage with us in other related ways, including any marketing or events</li>
-        </ul>
-
-        <p><strong>Questions or concerns?</strong> Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at <a href="mailto:mkaminski.contact@gmail.com">mkaminski.contact@gmail.com</a>.</p>
-
-        <div class="summary">
-            <h2>SUMMARY OF KEY POINTS</h2>
-            <p><em>This summary provides key points from our Privacy Notice, but you can find out more details about any of these topics by clicking the link following each key point or by using our table of contents below to find the section you are looking for.</em></p>
-
-            <p><strong>What personal information do we process?</strong> When you visit, use, or navigate our Services, we may process personal information depending on how you interact with us and the Services, the choices you make, and the products and features you use. Learn more about personal information you disclose to us.</p>
-
-            <p><strong>Do we process any sensitive personal information?</strong> We do not process any sensitive personal information.</p>
-
-            <p><strong>Do we collect any information from third parties?</strong> We do not collect any information from third parties.</p>
-
-            <p><strong>How do we process your information?</strong> We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent. We process your information only when we have a valid legal reason to do so.</p>
-
-            <p><strong>In what situations and with which parties do we share personal information?</strong> We may share information in specific situations and with specific third parties.</p>
-
-            <p><strong>How do we keep your information safe?</strong> We have adequate organizational and technical processes and procedures in place to protect your personal information. However, no electronic transmission over the internet or information storage technology can be guaranteed to be 100% secure.</p>
-
-            <p><strong>What are your rights?</strong> Depending on where you are located geographically, the applicable privacy law may mean you have certain rights regarding your personal information.</p>
-
-            <p><strong>How do you exercise your rights?</strong> The easiest way to exercise your rights is by visiting <a href="https://forms.gle/o3xsS3uTh4bcwYYR9" target="_blank">https://forms.gle/o3xsS3uTh4bcwYYR9</a>, or by contacting us. We will consider and act upon any request in accordance with applicable data protection laws.</p>
-        </div>
-
-        <div class="toc">
-            <h2>TABLE OF CONTENTS</h2>
-            <a href="#section1">1. WHAT INFORMATION DO WE COLLECT?</a>
-            <a href="#section2">2. HOW DO WE PROCESS YOUR INFORMATION?</a>
-            <a href="#section3">3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR PERSONAL INFORMATION?</a>
-            <a href="#section4">4. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</a>
-            <a href="#section5">5. HOW LONG DO WE KEEP YOUR INFORMATION?</a>
-            <a href="#section6">6. HOW DO WE KEEP YOUR INFORMATION SAFE?</a>
-            <a href="#section7">7. DO WE COLLECT INFORMATION FROM MINORS?</a>
-            <a href="#section8">8. WHAT ARE YOUR PRIVACY RIGHTS?</a>
-            <a href="#section9">9. CONTROLS FOR DO-NOT-TRACK FEATURES</a>
-            <a href="#section10">10. DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</a>
-            <a href="#section11">11. DO WE MAKE UPDATES TO THIS NOTICE?</a>
-            <a href="#section12">12. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</a>
-            <a href="#section13">13. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</a>
-        </div>
-
-        <h2 id="section1">1. WHAT INFORMATION DO WE COLLECT?</h2>
-        <h3>Personal information you disclose to us</h3>
-        <p><strong><em>In Short:</em></strong> <em>We collect personal information that you provide to us.</em></p>
-        
-        <p>We collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our products and Services, when you participate in activities on the Services, or otherwise when you contact us.</p>
-
-        <p><strong>Sensitive Information.</strong> We do not process any sensitive personal information.</p>
-
-        <p>All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.</p>
-
-        <h2 id="section2">2. HOW DO WE PROCESS YOUR INFORMATION?</h2>
-        <p><strong><em>In Short:</em></strong> <em>We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We process the personal information for the following purposes listed below. We may also process your information for other purposes only with your prior explicit consent.</em></p>
-
-        <p><strong>We process your personal information for a variety of reasons, depending on how you interact with our Services, including:</strong></p>
-        <ul>
-            <li><strong>To save or protect an individual's vital interest.</strong> We may process your information when necessary to save or protect an individual's vital interest, such as to prevent harm.</li>
-        </ul>
-
-        <h2 id="section3">3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR INFORMATION?</h2>
-        <p><strong><em>In Short:</em></strong> <em>We only process your personal information when we believe it is necessary and we have a valid legal reason (i.e., legal basis) to do so under applicable law, like with your consent, to comply with laws, to provide you with services to enter into or fulfill our contractual obligations, to protect your rights, or to fulfill our legitimate business interests.</em></p>
-
-        <p><strong><em>If you are located in the EU or UK, this section applies to you.</em></strong></p>
-
-        <p>The General Data Protection Regulation (GDPR) and UK GDPR require us to explain the valid legal bases we rely on in order to process your personal information. As such, we may rely on the following legal bases to process your personal information:</p>
-
-        <ul>
-            <li><strong>Consent.</strong> We may process your information if you have given us permission (i.e., consent) to use your personal information for a specific purpose. You can withdraw your consent at any time.</li>
-            <li><strong>Legal Obligations.</strong> We may process your information where we believe it is necessary for compliance with our legal obligations.</li>
-            <li><strong>Vital Interests.</strong> We may process your information where we believe it is necessary to protect your vital interests or the vital interests of a third party.</li>
-        </ul>
-
-        <p><strong><em>If you are located in Canada, this section applies to you.</em></strong></p>
-
-        <p>We may process your information if you have given us specific permission (i.e., express consent) to use your personal information for a specific purpose, or in situations where your permission can be inferred (i.e., implied consent). You can withdraw your consent at any time.</p>
-
-        <h2 id="section4">4. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</h2>
-        <p><strong><em>In Short:</em></strong> <em>We may share information in specific situations described in this section and/or with the following third parties.</em></p>
-
-        <p>We may need to share your personal information in the following situations:</p>
-        <ul>
-            <li><strong>Business Transfers.</strong> We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</li>
-        </ul>
-
-        <h2 id="section5">5. HOW LONG DO WE KEEP YOUR INFORMATION?</h2>
-        <p><strong><em>In Short:</em></strong> <em>We keep your information for as long as necessary to fulfill the purposes outlined in this Privacy Notice unless otherwise required by law.</em></p>
-
-        <p>We will only keep your personal information for as long as it is necessary for the purposes set out in this Privacy Notice, unless a longer retention period is required or permitted by law.</p>
-
-        <h2 id="section6">6. HOW DO WE KEEP YOUR INFORMATION SAFE?</h2>
-        <p><strong><em>In Short:</em></strong> <em>We aim to protect your personal information through a system of organizational and technical security measures.</em></p>
-
-        <p>We have implemented appropriate and reasonable technical and organizational security measures designed to protect the security of any personal information we process. However, despite our safeguards and efforts to secure your information, no electronic transmission over the Internet or information storage technology can be guaranteed to be 100% secure.</p>
-
-        <h2 id="section7">7. DO WE COLLECT INFORMATION FROM MINORS?</h2>
-        <p><strong><em>In Short:</em></strong> <em>We do not knowingly collect data from or market to children under 18 years of age or the equivalent age as specified by law in your jurisdiction.</em></p>
-
-        <p>We do not knowingly collect, solicit data from, or market to children under 18 years of age, nor do we knowingly sell such personal information. By using the Services, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependent's use of the Services.</p>
-
-        <h2 id="section8">8. WHAT ARE YOUR PRIVACY RIGHTS?</h2>
-        <p><strong><em>In Short:</em></strong> <em>Depending on your state of residence in the US or in some regions, such as the European Economic Area (EEA), United Kingdom (UK), Switzerland, and Canada, you have rights that allow you greater access to and control over your personal information.</em></p>
-
-        <p>In some regions (like the EEA, UK, Switzerland, and Canada), you have certain rights under applicable data protection laws. These may include the right (i) to request access and obtain a copy of your personal information, (ii) to request rectification or erasure; (iii) to restrict the processing of your personal information; (iv) if applicable, to data portability; and (v) not to be subject to automated decision-making.</p>
-
-        <h2 id="section9">9. CONTROLS FOR DO-NOT-TRACK FEATURES</h2>
-        <p>Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals.</p>
-
-        <h2 id="section10">10. DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</h2>
-        <p><strong><em>In Short:</em></strong> <em>If you are a resident of California, Colorado, Connecticut, Delaware, Florida, Indiana, Iowa, Kentucky, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah, or Virginia, you may have the right to request access to and receive details about the personal information we maintain about you.</em></p>
-
-        <h3>Categories of Personal Information We Collect</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Category</th>
-                    <th>Examples</th>
-                    <th>Collected</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>A. Identifiers</td>
-                    <td>Contact details, such as real name, alias, postal address, telephone or mobile contact number</td>
-                    <td>NO</td>
-                </tr>
-                <tr>
-                    <td>B. Personal information</td>
-                    <td>Name, contact information, education, employment, employment history, and financial information</td>
-                    <td>NO</td>
-                </tr>
-                <tr>
-                    <td>C. Protected classification characteristics</td>
-                    <td>Gender, age, date of birth, race and ethnicity, national origin, marital status</td>
-                    <td>NO</td>
-                </tr>
-                <tr>
-                    <td>D. Commercial information</td>
-                    <td>Transaction information, purchase history, financial details</td>
-                    <td>NO</td>
-                </tr>
-                <tr>
-                    <td>E. Biometric information</td>
-                    <td>Fingerprints and voiceprints</td>
-                    <td>NO</td>
-                </tr>
-                <tr>
-                    <td>F. Internet or network activity</td>
-                    <td>Browsing history, search history, online behavior</td>
-                    <td>NO</td>
-                </tr>
-                <tr>
-                    <td>G. Geolocation data</td>
-                    <td>Device location</td>
-                    <td>NO</td>
-                </tr>
-                <tr>
-                    <td>H. Audio, electronic, sensory information</td>
-                    <td>Images and audio, video or call recordings</td>
-                    <td>NO</td>
-                </tr>
-                <tr>
-                    <td>I. Professional or employment-related information</td>
-                    <td>Business contact details, job title, work history</td>
-                    <td>NO</td>
-                </tr>
-                <tr>
-                    <td>J. Education Information</td>
-                    <td>Student records and directory information</td>
-                    <td>NO</td>
-                </tr>
-                <tr>
-                    <td>K. Inferences drawn from personal information</td>
-                    <td>Inferences to create a profile about preferences and characteristics</td>
-                    <td>NO</td>
-                </tr>
-                <tr>
-                    <td>L. Sensitive personal Information</td>
-                    <td>None</td>
-                    <td>NO</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p>We do not collect or process sensitive personal information.</p>
-
-        <h2 id="section11">11. DO WE MAKE UPDATES TO THIS NOTICE?</h2>
-        <p><strong><em>In Short:</em></strong> <em>Yes, we will update this notice as necessary to stay compliant with relevant laws.</em></p>
-
-        <p>We may update this Privacy Notice from time to time. The updated version will be indicated by an updated "Revised" date at the top of this Privacy Notice.</p>
-
-        <h2 id="section12">12. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h2>
-        <p>If you have questions or comments about this notice, you may email us at <a href="mailto:mkaminski.contact@gmail.com">mkaminski.contact@gmail.com</a> or contact us by post at:</p>
-
-        <p>
-            <strong>Mateusz Kamiński</strong><br>
-            Samin 33<br>
-            Dąbrówno, Warmińsko mazurskie 14-120<br>
-            Poland
-        </p>
-
-        <h2 id="section13">13. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</h2>
-        <p>You have the right to request access to the personal information we collect from you, details about how we have processed it, correct inaccuracies, or delete your personal information. To request to review, update, or delete your personal information, please visit: <a href="https://forms.gle/o3xsS3uTh4bcwYYR9" target="_blank">https://forms.gle/o3xsS3uTh4bcwYYR9</a>.</p>
-
-        <hr style="margin: 40px 0; border: none; border-top: 1px solid #e0e0e0;">
-        <p style="text-align: center; color: #999; font-size: 14px;">This Privacy Policy was created using Termly's Privacy Policy Generator</p>
+    <div class="card">
+      <h2>Najważniejsze w skrócie</h2>
+      <ul>
+        <li><strong>Twoje dane treningowe nigdy nie trafiają do mnie.</strong> Treningi, serie, ciężary, waga i pomiary
+          ciała są zapisywane wyłącznie w pamięci Twojego telefonu. Fortivo nie ma kont, nie ma logowania i nie ma
+          serwera, na który cokolwiek by się wysyłało.</li>
+        <li><strong>Nie ma reklam, analityki ani profilowania.</strong> Nie sprzedaję i nie udostępniam nikomu żadnych
+          danych w celach marketingowych.</li>
+        <li><strong>Jedyne, co aplikacja wysyła sama z siebie, to informacje techniczne o jej działaniu</strong> —
+          raporty o błędach i krótka informacja o uruchomieniu aplikacji. Nie zawierają Twoich treningów ani pomiarów.
+          Domyślnie są włączone, ale możesz je wyłączyć: <em>Profil → Wysyłaj raporty o błędach</em>.</li>
+        <li><strong>Kopia zapasowa Androida</strong> może objąć dane aplikacji i zapisać je na Twoim koncie Google. To
+          dzieje się między Tobą a Google — ja nie mam do tej kopii dostępu. Możesz to wyłączyć w ustawieniach systemu.
+        </li>
+      </ul>
     </div>
+
+    <h2>1. Kto odpowiada za Twoje dane</h2>
+
+    <p>Administratorem danych osobowych w zakresie opisanym w tej polityce jest:</p>
+
+    <p>
+      <strong>Mateusz Kamiński</strong>, prowadzący działalność pod nazwą <strong>Astilion</strong><br>
+      Samin 33, 14-120 Dąbrówno, województwo warmińsko-mazurskie, Polska<br>
+      E-mail: <a href="mailto:mkaminski.contact@gmail.com">mkaminski.contact@gmail.com</a>
+    </p>
+
+    <p class="note">W sprawach dotyczących prywatności możesz napisać na powyższy adres e-mail. Odpowiadam najszybciej,
+      jak potrafię — co do zasady w ciągu miesiąca od otrzymania wiadomości. Jeżeli sprawa okaże się szczególnie
+      skomplikowana, termin może zostać przedłużony o kolejne dwa miesiące; w takim wypadku poinformuję Cię o tym w
+      ciągu pierwszego miesiąca (art. 12 ust. 3 RODO).</p>
+
+    <h2>2. Dane, które zostają na Twoim urządzeniu</h2>
+
+    <p>Fortivo działa w całości offline. Wszystko, co wpisujesz do aplikacji, zapisuje się w lokalnej bazie danych w
+      prywatnym katalogu aplikacji na Twoim telefonie:</p>
+
+    <ul>
+      <li>treningi, ćwiczenia, serie, powtórzenia, ciężary, RPE, tempo i czasy odpoczynku;</li>
+      <li>historia wykonanych treningów wraz z datami i czasem trwania;</li>
+      <li>waga ciała i jej historia, cel wagowy;</li>
+      <li>pomiary obwodów ciała;</li>
+      <li>notatki, które sam dodajesz do treningów, serii i pomiarów;</li>
+      <li>plany tygodniowe, ulubione ćwiczenia i własne ćwiczenia;</li>
+      <li>ustawienia aplikacji (jednostki, domyślne czasy odpoczynku, pierwszy dzień tygodnia).</li>
+    </ul>
+
+    <p><strong>Nie mam do tych danych żadnego dostępu.</strong> Aplikacja nie wysyła ich do mnie ani na żaden mój serwer
+      — takiego serwera po prostu nie ma. Poza dwiema sytuacjami, które kontrolujesz sam — kopią zapasową Androida
+      (punkt 3.2) i eksportem do pliku (punkt 3.3) — dane pozostają w prywatnym katalogu aplikacji na Twoim telefonie,
+      pod ochroną systemu Android.</p>
+
+    <p>Część z tych danych — waga, pomiary ciała, notatki — może być uznana za informacje o zdrowiu. Właśnie dlatego
+      aplikacja jest zbudowana tak, żeby nie trafiały do mnie ani do żadnego podmiotu trzeciego. Jedyne drogi, którymi
+      mogą opuścić telefon, opisuję w punktach 3.2 i 3.3 — w obu decydujesz o tym Ty.</p>
+
+    <h2>3. Dane, które opuszczają urządzenie</h2>
+
+    <h3>3.1 Raporty o błędach (Sentry)</h3>
+
+    <p>Jeżeli masz włączone wysyłanie raportów o błędach — domyślnie jest włączone, a zmienisz to w <em>Profil → Wysyłaj
+        raporty o błędach</em> — aplikacja przesyła do usługi <strong>Sentry</strong> dwie rzeczy: raporty techniczne o
+      napotkanych błędach oraz krótką informację o uruchomieniu aplikacji, która pozwala policzyć, jaki odsetek
+      uruchomień kończy się awarią. Usługa jest prowadzona przez Functional Software, Inc. Dzięki temu wiem o awariach,
+      o których inaczej bym się nie dowiedział.</p>
+
+    <p>Po wyłączeniu przełącznika i ponownym uruchomieniu aplikacji nie jest wysyłane nic — ani raporty, ani informacja
+      o uruchomieniu.</p>
+
+    <table>
+      <tr>
+        <th>Co zawiera raport</th>
+        <th>Czego nie zawiera</th>
+      </tr>
+      <tr>
+        <td>
+          rodzaj błędu i miejsce w kodzie, w którym wystąpił;<br><br>
+          model i producent urządzenia, wersja Androida, wersja aplikacji, ilość dostępnej pamięci, poziom baterii,
+          orientacja ekranu, język i strefa czasowa;<br><br>
+          losowy identyfikator instalacji aplikacji, pozwalający odróżnić od siebie zgłoszenia z różnych
+          urządzeń;<br><br>
+          nazwy ekranów odwiedzonych bezpośrednio przed błędem (np. „historia treningów”);<br><br>
+          informacja o uruchomieniu i zakończeniu pracy aplikacji — sam fakt, bez żadnej treści;<br><br>
+          podstawowe dane o szybkości działania aplikacji
+        </td>
+        <td>
+          Twoich treningów, ciężarów, wagi ani pomiarów ciała;<br><br>
+          treści Twoich notatek;<br><br>
+          zrzutów ekranu ani nagrań z aplikacji;<br><br>
+          Twojego imienia, adresu e-mail ani żadnych danych kontaktowych;<br><br>
+          Twojego adresu IP — jego zapisywanie jest wyłączone, a informacja o przybliżonej lokalizacji wyprowadzana z
+          adresu IP jest usuwana z raportu
+        </td>
+      </tr>
+    </table>
+
+    <p>Losowy identyfikator instalacji nie mówi nic o tym, kim jesteś — nie jest powiązany z żadnym kontem ani danymi
+      kontaktowymi. Nie jestem w stanie ustalić na jego podstawie tożsamości osoby korzystającej z aplikacji. Mimo to
+      traktuję go ostrożnie i opisuję tutaj jako dane osobowe.</p>
+
+    <p><strong>Podstawa prawna:</strong> art. 6 ust. 1 lit. f RODO — mój prawnie uzasadniony interes polegający na
+      zapewnieniu poprawnego i stabilnego działania aplikacji oraz na usuwaniu jej błędów.</p>
+
+    <p><strong>Jak długo:</strong> raporty o błędach są przechowywane przez <strong>30 dni</strong> od zgłoszenia, po
+      czym są automatycznie usuwane.</p>
+
+    <p><strong>Gdzie:</strong> dane są przechowywane w europejskim regionie usługi Sentry, na serwerach na terenie Unii
+      Europejskiej. Sentry działa na moje zlecenie jako podmiot przetwarzający, na podstawie zawartej umowy powierzenia
+      przetwarzania danych. Jeżeli w ramach tej umowy dochodzi do przekazania danych poza Europejski Obszar Gospodarczy,
+      odbywa się to na podstawie mechanizmów przewidzianych w rozdziale V RODO, wskazanych w umowie z Sentry.</p>
+
+    <p><strong>Jak to wyłączyć:</strong> w aplikacji przejdź do <em>Profil → Wysyłaj raporty o błędach</em> i wyłącz
+      przełącznik. Po ponownym uruchomieniu aplikacji przestanie ona wysyłać jakiekolwiek raporty. Możesz też w każdej
+      chwili wnieść sprzeciw wobec tego przetwarzania, pisząc na podany wyżej adres e-mail (art. 21 RODO).</p>
+
+    <h3>3.2 Kopia zapasowa Androida</h3>
+
+    <p>Android może automatycznie wykonywać kopię zapasową danych aplikacji i zapisywać ją na <strong>Twoim koncie
+        Google</strong>. Kopia obejmuje lokalną bazę danych Fortivo, czyli także Twoje treningi, wagę i pomiary ciała.
+    </p>
+
+    <p>Ta kopia powstaje w relacji między Tobą a Google — <strong>nie mam do niej dostępu</strong> i nie jestem jej
+      administratorem. Zasady jej przechowywania określa polityka prywatności Google.</p>
+
+    <p>Dwie rzeczy, o których warto wiedzieć:</p>
+
+    <ul>
+      <li>Kopię zapasową możesz wyłączyć w ustawieniach telefonu (zwykle <em>Ustawienia → Google → Kopia zapasowa</em>).
+      </li>
+      <li>Jeśli odinstalujesz Fortivo, a następnie zainstalujesz ją ponownie na tym samym koncie Google, <strong>Twoje
+          dane mogą wrócić z kopii zapasowej</strong>. Jeżeli chcesz trwale usunąć dane, samo odinstalowanie aplikacji
+        może nie wystarczyć — usuń także kopię zapasową w ustawieniach konta Google.</li>
+    </ul>
+
+    <h3>3.3 Eksport danych do pliku</h3>
+
+    <p>W <em>Profilu</em> możesz wyeksportować wszystkie swoje dane do pliku JSON. Plik jest tworzony na Twoim
+      urządzeniu i przekazywany tam, gdzie sam go wyślesz — do chmury, na e-mail, do innej aplikacji. Ja nie otrzymuję
+      ani kopii, ani informacji o tym, że eksport się odbył.</p>
+
+    <p class="note">Plik nie jest zaszyfrowany i zawiera komplet Twoich danych, w tym wagę i pomiary ciała. Wysyłaj go
+      tylko tam, gdzie chcesz, żeby te dane trafiły.</p>
+
+    <h2>4. Testy zamknięte (beta)</h2>
+
+    <p>Jeżeli bierzesz udział w zamkniętych testach Fortivo, przetwarzam dodatkowo <strong>adres e-mail powiązany z
+        Twoim kontem Google</strong>, który podajesz zgłaszając się do testów, oraz treść uwag, które przesyłasz.</p>
+
+    <ul>
+      <li><strong>Cel:</strong> udostępnienie Ci wersji testowej przez Google Play, kontakt w sprawach dotyczących
+        testów oraz — jeżeli wyrazisz na to osobną zgodę — przekazanie Ci obiecanego dostępu do funkcji płatnych, gdy
+        powstaną.</li>
+      <li><strong>Podstawa prawna:</strong> art. 6 ust. 1 lit. a RODO — Twoja zgoda, wyrażona przez zgłoszenie się do
+        testów. Możesz ją wycofać w każdej chwili, pisząc na podany adres e-mail; wycofanie zgody nie wpływa na zgodność
+        z prawem przetwarzania sprzed jej wycofania.</li>
+      <li><strong>Komu udostępniam:</strong> nikomu poza Google, które obsługuje dystrybucję wersji testowej przez
+        Google Play.</li>
+    </ul>
+
+    <p><strong>Jak długo przechowuję</strong> — zależnie od tego, czemu dane służą:</p>
+
+    <table>
+      <tr>
+        <th>Co</th>
+        <th>Jak długo</th>
+      </tr>
+      <tr>
+        <td>Lista adresów e-mail testerów w Google Play</td>
+        <td>Do zamknięcia testów zamkniętych. Potem usuwam ją z konsoli Google Play.</td>
+      </tr>
+      <tr>
+        <td>Treść uwag i zgłoszeń</td>
+        <td>Zachowuję, bo służą do poprawiania aplikacji — ale po zakończeniu testów odłączam od nich adresy e-mail,
+          więc przestają być powiązane z konkretną osobą.</td>
+      </tr>
+      <tr>
+        <td>Adres e-mail zachowany po to, żeby przekazać Ci obiecany dostęp do funkcji płatnych</td>
+        <td>Tylko jeżeli osobno się na to zgodzisz w ankiecie kończącej testy. Przechowuję go do momentu przekazania Ci
+          dostępu albo do wycofania zgody — cokolwiek nastąpi wcześniej.</td>
+      </tr>
+    </table>
+
+    <p class="note">Usuwam dane ze swoich zasobów i z konsoli Google Play. Nie mam natomiast wpływu na to, jak długo i w
+      jakim zakresie własne kopie przechowuje Google — określa to polityka prywatności Google.</p>
+
+    <h2>5. Twoje prawa</h2>
+
+    <p>W zakresie danych, którymi administruję, przysługuje Ci prawo do:</p>
+
+    <ul>
+      <li>dostępu do danych i uzyskania ich kopii (art. 15 RODO);</li>
+      <li>sprostowania danych (art. 16 RODO);</li>
+      <li>usunięcia danych (art. 17 RODO);</li>
+      <li>ograniczenia przetwarzania (art. 18 RODO);</li>
+      <li>przenoszenia danych (art. 20 RODO);</li>
+      <li>wniesienia sprzeciwu wobec przetwarzania opartego na uzasadnionym interesie, czyli wobec raportów o błędach
+        (art. 21 RODO);</li>
+      <li>wycofania zgody w zakresie udziału w testach (art. 7 ust. 3 RODO).</li>
+    </ul>
+
+    <h3>Dane treningowe</h3>
+
+    <p>Danymi zapisanymi w Twoim telefonie zarządzasz samodzielnie — możesz je w każdej chwili edytować w aplikacji,
+      wyeksportować do pliku albo usunąć, czyszcząc dane aplikacji w ustawieniach systemu lub ją odinstalowując.
+      Pamiętaj o kopii zapasowej Google opisanej w punkcie 3.2.</p>
+
+    <p class="note"><strong>Uwaga:</strong> aplikacja nie ma na razie funkcji wczytania pliku eksportu z powrotem.
+      Eksport służy do wglądu we własne dane i do zabrania ich ze sobą — <strong>nie jest kopią zapasową</strong>, bo
+      usuniętych danych nie da się z niego przywrócić. Funkcja importu jest planowana.</p>
+
+    <h3>Raporty o błędach — ważne zastrzeżenie</h3>
+
+    <p>Raporty o błędach są celowo zbudowane tak, żeby nie dało się na ich podstawie ustalić, kim jesteś. Jedynym
+      identyfikatorem w raporcie jest losowy identyfikator instalacji opisany w punkcie 3.1 — nie jest powiązany z
+      żadnym kontem, adresem e-mail ani innymi danymi kontaktowymi, bo aplikacja takich danych w ogóle nie zbiera.</p>
+
+    <p>Oznacza to, że jeśli poprosisz mnie o dostęp do „swoich” raportów o błędach albo o ich usunięcie, <strong>nie
+        będę w stanie ustalić, które z nich pochodzą od Ciebie</strong>. Zgodnie z art. 11 ust. 2 RODO nie mam obowiązku
+      zbierać dodatkowych informacji wyłącznie po to, żeby Cię zidentyfikować — i celowo tego nie robię, bo oznaczałoby
+      to zbieranie większej ilości danych, niż potrzeba. W takiej sytuacji poinformuję Cię o tym w odpowiedzi na
+      wniosek.</p>
+
+    <p>Jeśli chcesz mieć pewność, że nie wysyłasz raportów o błędach, wyłącz je w aplikacji: <em>Profil → Wysyłaj
+        raporty o błędach</em>.</p>
+
+    <h3>Skarga do organu nadzorczego</h3>
+
+    <p>Jeżeli uważasz, że przetwarzam Twoje dane niezgodnie z prawem, możesz wnieść skargę do Prezesa Urzędu Ochrony
+      Danych Osobowych:</p>
+
+    <p class="note">
+      Urząd Ochrony Danych Osobowych<br>
+      ul. Stawki 2, 00-193 Warszawa<br>
+      <a href="https://uodo.gov.pl">uodo.gov.pl</a>
+    </p>
+
+    <h2>6. Czego nie robię</h2>
+
+    <ul>
+      <li>Nie wyświetlam reklam i nie współpracuję z sieciami reklamowymi.</li>
+      <li>Nie sprzedaję ani nie udostępniam danych podmiotom trzecim w celach marketingowych.</li>
+      <li>Nie stosuję profilowania ani zautomatyzowanego podejmowania decyzji wywołujących wobec Ciebie skutki prawne.
+      </li>
+      <li>Nie zbieram danych o Twojej lokalizacji — ani z GPS, ani wyprowadzanych z adresu IP. Aplikacja nie prosi o
+        uprawnienie do lokalizacji.</li>
+      <li>Nie korzystam z narzędzi analityki produktowej śledzących, jak korzystasz z aplikacji. Jedyne dane techniczne,
+        jakie do mnie docierają, to te opisane w punkcie 3.1 — służą wykrywaniu awarii, nie obserwowaniu Twoich
+        zachowań.</li>
+      <li>Nie wymagam zakładania konta ani podawania jakichkolwiek danych osobowych, żeby korzystać z aplikacji.</li>
+    </ul>
+
+    <h2>7. Wiek użytkownika</h2>
+
+    <p>Fortivo jest przeznaczona dla osób pełnoletnich (18 lat i więcej). Nie jest kierowana do dzieci ani młodzieży i
+      świadomie nie zbieram danych osób poniżej 18. roku życia. Jeżeli jesteś rodzicem lub opiekunem i uważasz, że
+      dziecko przekazało mi jakiekolwiek dane, napisz na podany adres e-mail — usunę je.</p>
+
+    <h2>8. Zmiany polityki</h2>
+
+    <p>Jeżeli zmienię sposób działania aplikacji w sposób wpływający na prywatność, zaktualizuję ten dokument i zmienię
+      datę na jego początku. O istotnych zmianach poinformuję dodatkowo w aplikacji lub w opisie aktualizacji w Google
+      Play.</p>
+
+    <h2>9. Kontakt</h2>
+
+    <p>Pytania, wnioski i sprzeciwy: <a href="mailto:mkaminski.contact@gmail.com">mkaminski.contact@gmail.com</a></p>
+
+    <p class="note">Odpowiadam bez zbędnej zwłoki, co do zasady w ciągu miesiąca od otrzymania wiadomości, z możliwością
+      przedłużenia o dwa miesiące w sprawach szczególnie skomplikowanych (art. 12 ust. 3 RODO). Nie proszę o skan dowodu
+      ani żadne dodatkowe dokumenty — zbieram tylko te informacje, które są niezbędne, żeby odpowiedzieć na wniosek.</p>
+
+    <footer>
+      Fortivo — aplikacja do planowania i śledzenia treningów siłowych.<br>
+      Mateusz Kamiński (Astilion), Samin 33, 14-120 Dąbrówno.
+    </footer>
+
+  </div>
 </body>
+
 </html>
