@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Polityka prywatności aplikacji Fortivo — dziennik treningowy działający offline. Dane treningowe pozostają na urządzeniu użytkownika.">
   <title>Polityka prywatności — Fortivo</title>
   <style>
     :root {
@@ -46,12 +48,14 @@
       margin: 44px 0 12px;
       padding-top: 20px;
       border-top: 1px solid var(--border);
+      scroll-margin-top: 16px;
     }
 
     h3 {
       font-size: 18px;
       margin: 28px 0 8px;
       color: var(--accent);
+      scroll-margin-top: 16px;
     }
 
     .updated {
@@ -109,6 +113,15 @@
       font-weight: 600;
     }
 
+    td ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    td li {
+      margin-bottom: 6px;
+    }
+
     strong {
       color: #fff;
     }
@@ -116,6 +129,53 @@
     .note {
       color: var(--muted);
       font-size: 15px;
+    }
+
+    .legal {
+      background: var(--card);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 4px 18px;
+      margin: 20px 0;
+      font-size: 15px;
+    }
+
+    .legal p {
+      margin: 12px 0;
+    }
+
+    .toc {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin: 28px 0 40px;
+      font-size: 15px;
+    }
+
+    .toc h2 {
+      font-size: 16px;
+      margin: 0 0 10px;
+      border-top: none;
+      padding-top: 0;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: 22px;
+      columns: 2;
+      column-gap: 28px;
+    }
+
+    .toc li {
+      margin-bottom: 5px;
+      break-inside: avoid;
+    }
+
+    .scroll-x {
+      overflow-x: auto;
     }
 
     footer {
@@ -144,6 +204,57 @@
       td {
         font-size: 14px;
       }
+
+      .toc ol {
+        columns: 1;
+      }
+    }
+
+    @media print {
+      :root {
+        --bg: #fff;
+        --card: #f4f4f4;
+        --accent: #000;
+        --text: #000;
+        --muted: #444;
+        --border: #bbb;
+      }
+
+      body {
+        font-size: 11pt;
+        line-height: 1.45;
+      }
+
+      .wrap {
+        max-width: none;
+        padding: 0;
+      }
+
+      .toc {
+        display: none;
+      }
+
+      h2,
+      h3 {
+        break-after: avoid;
+      }
+
+      table,
+      .card,
+      .legal {
+        break-inside: avoid;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+
+      a[href^="mailto:"]::after,
+      a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        color: #444;
+      }
     }
   </style>
 </head>
@@ -152,237 +263,461 @@
   <div class="wrap">
 
     <h1>Polityka prywatności aplikacji Fortivo</h1>
-    <p class="updated">Ostatnia aktualizacja: 26 sierpnia 2026</p>
+    <p class="updated">Wersja dokumentu: <strong>2026-09-04</strong> · Ostatnia aktualizacja: 4 września 2026</p>
 
     <div class="card">
-      <h2>Najważniejsze w skrócie</h2>
+      <h2 id="skrot">Najważniejsze w skrócie</h2>
       <ul>
-        <li><strong>Twoje dane treningowe nigdy nie trafiają do mnie.</strong> Treningi, serie, ciężary, waga i pomiary
-          ciała są zapisywane wyłącznie w pamięci Twojego telefonu. Fortivo nie ma kont, nie ma logowania i nie ma
-          serwera, na który cokolwiek by się wysyłało.</li>
-        <li><strong>Nie ma reklam, analityki ani profilowania.</strong> Nie sprzedaję i nie udostępniam nikomu żadnych
-          danych w celach marketingowych.</li>
-        <li><strong>Jedyne, co aplikacja wysyła sama z siebie, to informacje techniczne o jej działaniu</strong> —
-          raporty o błędach i krótka informacja o uruchomieniu aplikacji. Nie zawierają Twoich treningów ani pomiarów.
-          Domyślnie są włączone, ale możesz je wyłączyć: <em>Profil → Wysyłaj raporty o błędach</em>.</li>
+        <li><strong>Twoje dane treningowe nigdy do mnie nie trafiają.</strong> Treningi, serie, ciężary, waga i pomiary
+          ciała zapisują się wyłącznie w pamięci Twojego telefonu. Fortivo nie ma kont ani logowania i nie ma serwera,
+          na który cokolwiek by się wysyłało. Wyjątkiem jest udział w testach zamkniętych, opisany w punkcie 8.</li>
+        <li><strong>Raporty o błędach są domyślnie wyłączone.</strong> Aplikacja wyśle je dopiero wtedy, gdy wyrazisz na
+          to zgodę — zapyta o nią raz, przy pierwszym uruchomieniu. Możesz odmówić i korzystać z aplikacji normalnie,
+          a udzieloną zgodę wycofać w każdej chwili.</li>
+        <li><strong>Nie ma reklam, analityki ani profilowania.</strong> Żadne dane nie są sprzedawane ani udostępniane
+          w celach marketingowych.</li>
+        <li><strong>Aplikacja prosi o jedno uprawnienie — dostęp do internetu.</strong> Służy wyłącznie do wysłania
+          raportu o błędzie, jeżeli się na to zgodzisz.</li>
         <li><strong>Kopia zapasowa Androida</strong> może objąć dane aplikacji i zapisać je na Twoim koncie Google. To
-          dzieje się między Tobą a Google — ja nie mam do tej kopii dostępu. Możesz to wyłączyć w ustawieniach systemu.
+          dzieje się między Tobą a Google — ja nie mam do tej kopii dostępu. Możesz ją wyłączyć w ustawieniach systemu.
         </li>
       </ul>
     </div>
 
-    <h2>1. Kto odpowiada za Twoje dane</h2>
+    <nav class="toc" aria-label="Spis treści">
+      <h2>Spis treści</h2>
+      <ol>
+        <li><a href="#administrator">Administrator danych</a></li>
+        <li><a href="#zakres">Zakres dokumentu</a></li>
+        <li><a href="#dane-lokalne">Dane pozostające na urządzeniu</a></li>
+        <li><a href="#raporty">Raporty o błędach</a></li>
+        <li><a href="#backup">Kopia zapasowa Androida</a></li>
+        <li><a href="#eksport">Eksport danych do pliku</a></li>
+        <li><a href="#uprawnienia">Uprawnienia aplikacji</a></li>
+        <li><a href="#beta">Testy zamknięte</a></li>
+        <li><a href="#google-play">Pobranie ze sklepu Google Play</a></li>
+        <li><a href="#bezpieczenstwo">Bezpieczeństwo danych</a></li>
+        <li><a href="#prawa">Twoje prawa</a></li>
+        <li><a href="#czego-nie-robie">Czego aplikacja nie robi</a></li>
+        <li><a href="#wiek">Wiek użytkownika</a></li>
+        <li><a href="#zmiany">Zmiany polityki</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ol>
+    </nav>
 
-    <p>Administratorem danych osobowych w zakresie opisanym w tej polityce jest:</p>
+    <h2 id="administrator">1. Administrator danych</h2>
+
+    <p>Administratorem danych osobowych przetwarzanych w zakresie opisanym w niniejszym dokumencie jest:</p>
 
     <p>
-      <strong>Mateusz Kamiński</strong>, prowadzący działalność pod nazwą <strong>Astilion</strong><br>
+      <strong>Mateusz Kamiński</strong>, prowadzący działalność gospodarczą pod nazwą <strong>Astilion</strong><br>
       Samin 33, 14-120 Dąbrówno, województwo warmińsko-mazurskie, Polska<br>
       E-mail: <a href="mailto:mkaminski.contact@gmail.com">mkaminski.contact@gmail.com</a>
     </p>
 
-    <p class="note">W sprawach dotyczących prywatności możesz napisać na powyższy adres e-mail. Odpowiadam najszybciej,
-      jak potrafię — co do zasady w ciągu miesiąca od otrzymania wiadomości. Jeżeli sprawa okaże się szczególnie
-      skomplikowana, termin może zostać przedłużony o kolejne dwa miesiące; w takim wypadku poinformuję Cię o tym w
-      ciągu pierwszego miesiąca (art. 12 ust. 3 RODO).</p>
+    <p>Administrator nie wyznaczył inspektora ochrony danych. We wszystkich sprawach dotyczących przetwarzania danych
+      należy kontaktować się pod powyższym adresem e-mail.</p>
 
-    <h2>2. Dane, które zostają na Twoim urządzeniu</h2>
+    <p class="note">Odpowiedź na wniosek udzielana jest bez zbędnej zwłoki, co do zasady w terminie miesiąca od jego
+      otrzymania. W sprawach szczególnie skomplikowanych termin ten może zostać przedłużony o kolejne dwa miesiące,
+      o czym administrator informuje w ciągu pierwszego miesiąca (art. 12 ust. 3 RODO).</p>
 
-    <p>Fortivo działa w całości offline. Wszystko, co wpisujesz do aplikacji, zapisuje się w lokalnej bazie danych w
-      prywatnym katalogu aplikacji na Twoim telefonie:</p>
+    <h2 id="zakres">2. Zakres dokumentu</h2>
+
+    <p>Niniejsza polityka dotyczy aplikacji mobilnej <strong>Fortivo</strong> (<code>com.astilion.fortivo</code>)
+      w wersji udostępnianej w ramach <strong>testów zamkniętych</strong> w sklepie Google Play, wraz z całą obsługą
+      programu testów. Przed publicznym wydaniem aplikacji dokument może zostać zaktualizowany — zasady informowania
+      o zmianach opisuje punkt 14.</p>
+
+    <p>Dokument opisuje trzy odrębne kategorie danych, do których stosują się różne zasady: dane pozostające wyłącznie
+      na urządzeniu (punkt 3), raporty o błędach (punkt 4) oraz dane uczestników testów zamkniętych (punkt 8).</p>
+
+    <h2 id="dane-lokalne">3. Dane pozostające na urządzeniu</h2>
+
+    <p>Wszystko, co wpisujesz do aplikacji, zapisuje się w lokalnej bazie danych w prywatnym katalogu aplikacji na
+      Twoim telefonie:</p>
 
     <ul>
       <li>treningi, ćwiczenia, serie, powtórzenia, ciężary, RPE, tempo i czasy odpoczynku;</li>
       <li>historia wykonanych treningów wraz z datami i czasem trwania;</li>
       <li>waga ciała i jej historia, cel wagowy;</li>
       <li>pomiary obwodów ciała;</li>
-      <li>notatki, które sam dodajesz do treningów, serii i pomiarów;</li>
-      <li>plany tygodniowe, ulubione ćwiczenia i własne ćwiczenia;</li>
+      <li>notatki dodawane samodzielnie do treningów, serii i pomiarów;</li>
+      <li>plany tygodniowe, ulubione ćwiczenia i ćwiczenia własne;</li>
       <li>ustawienia aplikacji (jednostki, domyślne czasy odpoczynku, pierwszy dzień tygodnia).</li>
     </ul>
 
-    <p><strong>Nie mam do tych danych żadnego dostępu.</strong> Aplikacja nie wysyła ich do mnie ani na żaden mój serwer
-      — takiego serwera po prostu nie ma. Poza dwiema sytuacjami, które kontrolujesz sam — kopią zapasową Androida
-      (punkt 3.2) i eksportem do pliku (punkt 3.3) — dane pozostają w prywatnym katalogu aplikacji na Twoim telefonie,
-      pod ochroną systemu Android.</p>
+    <p><strong>Administrator nie ma do tych danych żadnego dostępu i ich nie przetwarza.</strong> Aplikacja nie wysyła
+      ich na żaden serwer — takiego serwera po prostu nie ma. W zakresie opisanym w tym punkcie administrator nie jest
+      zatem administratorem danych w rozumieniu art. 4 pkt 7 RODO; dane pozostają wyłącznie pod Twoją kontrolą,
+      w prywatnym katalogu aplikacji chronionym przez system Android.</p>
 
-    <p>Część z tych danych — waga, pomiary ciała, notatki — może być uznana za informacje o zdrowiu. Właśnie dlatego
-      aplikacja jest zbudowana tak, żeby nie trafiały do mnie ani do żadnego podmiotu trzeciego. Jedyne drogi, którymi
-      mogą opuścić telefon, opisuję w punktach 3.2 i 3.3 — w obu decydujesz o tym Ty.</p>
+    <p>Istnieją dokładnie dwie drogi, którymi te dane mogą opuścić telefon, i obiema sterujesz samodzielnie: kopia
+      zapasowa Androida (punkt 5) oraz eksport do pliku (punkt 6).</p>
 
-    <h2>3. Dane, które opuszczają urządzenie</h2>
+    <p>Część z tych informacji — waga, pomiary ciała, notatki — może być uznana za dane dotyczące zdrowia w rozumieniu
+      art. 9 RODO. Właśnie dlatego aplikacja jest zbudowana tak, żeby nie trafiały one ani do administratora, ani do
+      żadnego podmiotu trzeciego.</p>
 
-    <h3>3.1 Raporty o błędach (Sentry)</h3>
+    <h2 id="raporty">4. Raporty o błędach</h2>
 
-    <p>Jeżeli masz włączone wysyłanie raportów o błędach — domyślnie jest włączone, a zmienisz to w <em>Profil → Wysyłaj
-        raporty o błędach</em> — aplikacja przesyła do usługi <strong>Sentry</strong> dwie rzeczy: raporty techniczne o
-      napotkanych błędach oraz krótką informację o uruchomieniu aplikacji, która pozwala policzyć, jaki odsetek
-      uruchomień kończy się awarią. Usługa jest prowadzona przez Functional Software, Inc. Dzięki temu wiem o awariach,
-      o których inaczej bym się nie dowiedział.</p>
+    <p>Kiedy aplikacja się zawiesi lub napotka błąd, może wysłać raport techniczny do usługi <strong>Sentry</strong>.
+      Dzięki temu administrator dowiaduje się o awariach, o których inaczej nie miałby jak się dowiedzieć — aplikacja
+      nie ma backendu ani analityki, więc jest to jedyny kanał informacji zwrotnej o jej stabilności.</p>
 
-    <p>Po wyłączeniu przełącznika i ponownym uruchomieniu aplikacji nie jest wysyłane nic — ani raporty, ani informacja
-      o uruchomieniu.</p>
+    <p><strong>Ta funkcja jest domyślnie wyłączona.</strong> Przy pierwszym uruchomieniu aplikacja pyta o zgodę na
+      wysyłanie raportów i pozwala przejść dalej bez jej udzielenia. Dopóki zgody nie udzielisz, klient Sentry nie
+      jest w aplikacji w ogóle uruchamiany — nie powstaje żaden identyfikator i nie jest wysyłane nic, łącznie
+      z informacją o uruchomieniu aplikacji.</p>
 
-    <table>
-      <tr>
-        <th>Co zawiera raport</th>
-        <th>Czego nie zawiera</th>
-      </tr>
-      <tr>
-        <td>
-          rodzaj błędu i miejsce w kodzie, w którym wystąpił;<br><br>
-          model i producent urządzenia, wersja Androida, wersja aplikacji, ilość dostępnej pamięci, poziom baterii,
-          orientacja ekranu, język i strefa czasowa;<br><br>
-          losowy identyfikator instalacji aplikacji, pozwalający odróżnić od siebie zgłoszenia z różnych
-          urządzeń;<br><br>
-          nazwy ekranów odwiedzonych bezpośrednio przed błędem (np. „historia treningów”);<br><br>
-          informacja o uruchomieniu i zakończeniu pracy aplikacji — sam fakt, bez żadnej treści;<br><br>
-          podstawowe dane o szybkości działania aplikacji
-        </td>
-        <td>
-          Twoich treningów, ciężarów, wagi ani pomiarów ciała;<br><br>
-          treści Twoich notatek;<br><br>
-          zrzutów ekranu ani nagrań z aplikacji;<br><br>
-          Twojego imienia, adresu e-mail ani żadnych danych kontaktowych;<br><br>
-          Twojego adresu IP — jego zapisywanie jest wyłączone, a informacja o przybliżonej lokalizacji wyprowadzana z
-          adresu IP jest usuwana z raportu
-        </td>
-      </tr>
-    </table>
+    <p>Zgoda zaczyna obowiązywać przy <strong>kolejnym uruchomieniu aplikacji</strong> — sesja, w której jej udzielasz,
+      jeszcze niczego nie wysyła. Ten sam mechanizm działa przy wycofaniu zgody, co opisuje punkt 4.2.</p>
 
-    <p>Losowy identyfikator instalacji nie mówi nic o tym, kim jesteś — nie jest powiązany z żadnym kontem ani danymi
-      kontaktowymi. Nie jestem w stanie ustalić na jego podstawie tożsamości osoby korzystającej z aplikacji. Mimo to
-      traktuję go ostrożnie i opisuję tutaj jako dane osobowe.</p>
+    <h3 id="raporty-zawartosc">4.1 Co zawiera raport</h3>
 
-    <p><strong>Podstawa prawna:</strong> art. 6 ust. 1 lit. f RODO — mój prawnie uzasadniony interes polegający na
-      zapewnieniu poprawnego i stabilnego działania aplikacji oraz na usuwaniu jej błędów.</p>
+    <div class="scroll-x">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Raport zawiera</th>
+            <th scope="col">Raport nie zawiera</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <ul>
+                <li>rodzaj błędu i miejsce w kodzie, w którym wystąpił;</li>
+                <li>model i producenta urządzenia, wersję systemu Android oraz wersję aplikacji;</li>
+                <li>techniczne parametry urządzenia i jego stan w chwili błędu — między innymi procesor, rozdzielczość
+                  i orientację ekranu, ilość pamięci i wolnego miejsca, poziom i temperaturę baterii, rodzaj połączenia
+                  sieciowego, czas ostatniego uruchomienia urządzenia, język i strefę czasową;</li>
+                <li>wersję jądra systemu oraz informację, czy urządzenie zostało zrootowane — obie pomagają rozpoznać
+                  awarie występujące tylko na zmodyfikowanych systemach;</li>
+                <li>losowy identyfikator instalacji, pozwalający odróżnić od siebie zgłoszenia pochodzące z różnych
+                  urządzeń;</li>
+                <li>nazwy ekranów odwiedzonych bezpośrednio przed błędem (np. „historia treningów") — bez parametrów,
+                  czyli bez identyfikatorów konkretnych treningów czy ćwiczeń;</li>
+                <li>informację o uruchomieniu i zakończeniu pracy aplikacji — sam fakt, bez żadnej treści;</li>
+                <li>podstawowe pomiary szybkości działania aplikacji, zbierane z około 10% sesji.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Twoich treningów, ciężarów, wagi ani pomiarów ciała;</li>
+                <li>treści Twoich notatek;</li>
+                <li>etykiet elementów, które dotykasz na ekranie — są usuwane, zanim raport zostanie wysłany;</li>
+                <li>siły sygnału, przepustowości łącza ani informacji o tym, czy korzystasz z VPN — dane te są
+                  usuwane, zanim raport trafi do administratora, i nie są przechowywane;</li>
+                <li>zrzutów ekranu ani nagrań z aplikacji;</li>
+                <li>Twojego imienia, adresu e-mail ani żadnych danych kontaktowych — aplikacja ich w ogóle nie zbiera.
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-    <p><strong>Jak długo:</strong> raporty o błędach są przechowywane przez <strong>30 dni</strong> od zgłoszenia, po
-      czym są automatycznie usuwane.</p>
+    <p><strong>Adres IP.</strong> Jak przy każdym połączeniu internetowym, adres IP Twojego urządzenia jest technicznie
+      przekazywany do serwera Sentry. Nie jest jednak zapisywany — w projekcie włączona jest opcja blokująca
+      przechowywanie adresów IP, a wyprowadzana z adresu informacja o przybliżonej lokalizacji jest usuwana z raportu
+      po stronie serwera.</p>
 
-    <p><strong>Gdzie:</strong> dane są przechowywane w europejskim regionie usługi Sentry, na serwerach na terenie Unii
-      Europejskiej. Sentry działa na moje zlecenie jako podmiot przetwarzający, na podstawie zawartej umowy powierzenia
-      przetwarzania danych. Jeżeli w ramach tej umowy dochodzi do przekazania danych poza Europejski Obszar Gospodarczy,
-      odbywa się to na podstawie mechanizmów przewidzianych w rozdziale V RODO, wskazanych w umowie z Sentry.</p>
+    <p><strong>Ograniczenie ilości.</strong> Jedna sesja aplikacji może wysłać najwyżej 25 raportów o błędach
+      i 10 raportów o wydajności. Limit chroni przed sytuacją, w której pętla awarii na jednym urządzeniu generuje
+      nieograniczoną liczbę zgłoszeń.</p>
 
-    <p><strong>Jak to wyłączyć:</strong> w aplikacji przejdź do <em>Profil → Wysyłaj raporty o błędach</em> i wyłącz
-      przełącznik. Po ponownym uruchomieniu aplikacji przestanie ona wysyłać jakiekolwiek raporty. Możesz też w każdej
-      chwili wnieść sprzeciw wobec tego przetwarzania, pisząc na podany wyżej adres e-mail (art. 21 RODO).</p>
+    <p>Losowy identyfikator instalacji nie mówi nic o tym, kim jesteś — nie jest powiązany z żadnym kontem, adresem
+      e-mail ani danymi kontaktowymi, ponieważ aplikacja takich danych nie zbiera. Administrator nie jest w stanie na
+      jego podstawie ustalić tożsamości osoby korzystającej z aplikacji. Mimo to identyfikator jest tu opisany
+      i traktowany jako dane osobowe.</p>
 
-    <h3>3.2 Kopia zapasowa Androida</h3>
+    <h3 id="raporty-podstawa">4.2 Podstawa prawna, okres i miejsce przechowywania</h3>
+
+    <div class="legal">
+      <p><strong>Podstawa prawna:</strong> art. 6 ust. 1 lit. a RODO — Twoja zgoda. Odrębnie, zapisanie losowego
+        identyfikatora w pamięci urządzenia i odczyt informacji o urządzeniu następuje na podstawie Twojej zgody
+        w rozumieniu art. 399 ustawy — Prawo komunikacji elektronicznej.</p>
+
+      <p><strong>Wycofanie zgody:</strong> w każdej chwili, w aplikacji: <em>Profil → Wysyłaj raporty o błędach</em>.
+        Po wyłączeniu przełącznika i ponownym uruchomieniu aplikacji nie jest wysyłane nic. Zgodę można też wycofać
+        pisząc na adres e-mail administratora. Wycofanie zgody nie wpływa na zgodność z prawem przetwarzania, którego
+        dokonano przed jej wycofaniem (art. 7 ust. 3 RODO).</p>
+
+      <p><strong>Okres przechowywania:</strong> raporty są przechowywane przez <strong>30 dni</strong> od zgłoszenia,
+        po czym są automatycznie usuwane zgodnie z polityką retencji usługi Sentry.</p>
+
+      <p><strong>Podmiot przetwarzający:</strong> Functional Software, Inc. prowadząca usługę Sentry, działająca na
+        zlecenie administratora na podstawie zawartej umowy powierzenia przetwarzania danych.</p>
+
+      <p><strong>Miejsce przechowywania i transfery:</strong> dane są przechowywane w europejskim regionie usługi
+        Sentry, na serwerach na terenie Unii Europejskiej. Jeżeli w ramach obsługi usługi dochodzi do przekazania
+        danych poza Europejski Obszar Gospodarczy, odbywa się to na podstawie mechanizmów przewidzianych w rozdziale V
+        RODO, wskazanych w umowie powierzenia.</p>
+    </div>
+
+    <h2 id="backup">5. Kopia zapasowa Androida</h2>
 
     <p>Android może automatycznie wykonywać kopię zapasową danych aplikacji i zapisywać ją na <strong>Twoim koncie
-        Google</strong>. Kopia obejmuje lokalną bazę danych Fortivo, czyli także Twoje treningi, wagę i pomiary ciała.
-    </p>
+        Google</strong>. Kopia obejmuje lokalną bazę danych Fortivo — a więc także Twoje treningi, wagę i pomiary
+      ciała — oraz zapisane ustawienia aplikacji, w tym Twoją decyzję w sprawie raportów o błędach.</p>
 
-    <p>Ta kopia powstaje w relacji między Tobą a Google — <strong>nie mam do niej dostępu</strong> i nie jestem jej
-      administratorem. Zasady jej przechowywania określa polityka prywatności Google.</p>
+    <p>Kopia powstaje w relacji między Tobą a Google. <strong>Administrator nie ma do niej dostępu</strong> i nie jest
+      jej administratorem; zasady jej przechowywania określa polityka prywatności Google.</p>
 
-    <p>Dwie rzeczy, o których warto wiedzieć:</p>
+    <p>Trzy rzeczy, o których warto wiedzieć:</p>
 
     <ul>
       <li>Kopię zapasową możesz wyłączyć w ustawieniach telefonu (zwykle <em>Ustawienia → Google → Kopia zapasowa</em>).
       </li>
+      <li>Przywrócenie danych z kopii następuje <strong>wyłącznie w momencie instalacji</strong> aplikacji i tylko na
+        urządzeniu, na którym aplikacja jest podpisana tym samym kluczem. Razem z danymi wraca Twoja wcześniejsza
+        decyzja w sprawie raportów o błędach — jeżeli zgoda była udzielona, po przywróceniu kopii pozostaje aktywna
+        i aplikacja nie zapyta o nią ponownie. Możesz ją oczywiście wycofać w Profilu.</li>
       <li>Jeśli odinstalujesz Fortivo, a następnie zainstalujesz ją ponownie na tym samym koncie Google, <strong>Twoje
-          dane mogą wrócić z kopii zapasowej</strong>. Jeżeli chcesz trwale usunąć dane, samo odinstalowanie aplikacji
+          dane mogą wrócić z kopii zapasowej</strong>. Jeżeli chcesz je trwale usunąć, samo odinstalowanie aplikacji
         może nie wystarczyć — usuń także kopię zapasową w ustawieniach konta Google.</li>
     </ul>
 
-    <h3>3.3 Eksport danych do pliku</h3>
+    <h2 id="eksport">6. Eksport danych do pliku</h2>
 
-    <p>W <em>Profilu</em> możesz wyeksportować wszystkie swoje dane do pliku JSON. Plik jest tworzony na Twoim
-      urządzeniu i przekazywany tam, gdzie sam go wyślesz — do chmury, na e-mail, do innej aplikacji. Ja nie otrzymuję
-      ani kopii, ani informacji o tym, że eksport się odbył.</p>
+    <p>W <em>Profilu</em> możesz wyeksportować swoje dane do pliku JSON. Eksport obejmuje wszystko, co sam wprowadziłeś
+      — treningi, historię, wagę, pomiary, notatki, plany i ćwiczenia własne. Nie obejmuje wbudowanej bazy ćwiczeń,
+      ponieważ ta nie jest Twoimi danymi i odtwarza się przy instalacji.</p>
+
+    <p>Plik powstaje na Twoim urządzeniu i trafia tam, gdzie sam go wyślesz — do chmury, na e-mail, do innej aplikacji.
+      Administrator nie otrzymuje ani kopii pliku, ani informacji o tym, że eksport się odbył. Po udostępnieniu pliku
+      aplikacja usuwa go ze swojej pamięci podręcznej.</p>
 
     <p class="note">Plik nie jest zaszyfrowany i zawiera komplet Twoich danych, w tym wagę i pomiary ciała. Wysyłaj go
       tylko tam, gdzie chcesz, żeby te dane trafiły.</p>
 
-    <h2>4. Testy zamknięte (beta)</h2>
-
-    <p>Jeżeli bierzesz udział w zamkniętych testach Fortivo, przetwarzam dodatkowo <strong>adres e-mail powiązany z
-        Twoim kontem Google</strong>, który podajesz zgłaszając się do testów, oraz treść uwag, które przesyłasz.</p>
-
-    <ul>
-      <li><strong>Cel:</strong> udostępnienie Ci wersji testowej przez Google Play, kontakt w sprawach dotyczących
-        testów oraz — jeżeli wyrazisz na to osobną zgodę — przekazanie Ci obiecanego dostępu do funkcji płatnych, gdy
-        powstaną.</li>
-      <li><strong>Podstawa prawna:</strong> art. 6 ust. 1 lit. a RODO — Twoja zgoda, wyrażona przez zgłoszenie się do
-        testów. Możesz ją wycofać w każdej chwili, pisząc na podany adres e-mail; wycofanie zgody nie wpływa na zgodność
-        z prawem przetwarzania sprzed jej wycofania.</li>
-      <li><strong>Komu udostępniam:</strong> nikomu poza Google, które obsługuje dystrybucję wersji testowej przez
-        Google Play.</li>
-    </ul>
-
-    <p><strong>Jak długo przechowuję</strong> — zależnie od tego, czemu dane służą:</p>
-
-    <table>
-      <tr>
-        <th>Co</th>
-        <th>Jak długo</th>
-      </tr>
-      <tr>
-        <td>Lista adresów e-mail testerów w Google Play</td>
-        <td>Do zamknięcia testów zamkniętych. Potem usuwam ją z konsoli Google Play.</td>
-      </tr>
-      <tr>
-        <td>Treść uwag i zgłoszeń</td>
-        <td>Zachowuję, bo służą do poprawiania aplikacji — ale po zakończeniu testów odłączam od nich adresy e-mail,
-          więc przestają być powiązane z konkretną osobą.</td>
-      </tr>
-      <tr>
-        <td>Adres e-mail zachowany po to, żeby przekazać Ci obiecany dostęp do funkcji płatnych</td>
-        <td>Tylko jeżeli osobno się na to zgodzisz w ankiecie kończącej testy. Przechowuję go do momentu przekazania Ci
-          dostępu albo do wycofania zgody — cokolwiek nastąpi wcześniej.</td>
-      </tr>
-    </table>
-
-    <p class="note">Usuwam dane ze swoich zasobów i z konsoli Google Play. Nie mam natomiast wpływu na to, jak długo i w
-      jakim zakresie własne kopie przechowuje Google — określa to polityka prywatności Google.</p>
-
-    <h2>5. Twoje prawa</h2>
-
-    <p>W zakresie danych, którymi administruję, przysługuje Ci prawo do:</p>
-
-    <ul>
-      <li>dostępu do danych i uzyskania ich kopii (art. 15 RODO);</li>
-      <li>sprostowania danych (art. 16 RODO);</li>
-      <li>usunięcia danych (art. 17 RODO);</li>
-      <li>ograniczenia przetwarzania (art. 18 RODO);</li>
-      <li>przenoszenia danych (art. 20 RODO);</li>
-      <li>wniesienia sprzeciwu wobec przetwarzania opartego na uzasadnionym interesie, czyli wobec raportów o błędach
-        (art. 21 RODO);</li>
-      <li>wycofania zgody w zakresie udziału w testach (art. 7 ust. 3 RODO).</li>
-    </ul>
-
-    <h3>Dane treningowe</h3>
-
-    <p>Danymi zapisanymi w Twoim telefonie zarządzasz samodzielnie — możesz je w każdej chwili edytować w aplikacji,
-      wyeksportować do pliku albo usunąć, czyszcząc dane aplikacji w ustawieniach systemu lub ją odinstalowując.
-      Pamiętaj o kopii zapasowej Google opisanej w punkcie 3.2.</p>
-
     <p class="note"><strong>Uwaga:</strong> aplikacja nie ma na razie funkcji wczytania pliku eksportu z powrotem.
-      Eksport służy do wglądu we własne dane i do zabrania ich ze sobą — <strong>nie jest kopią zapasową</strong>, bo
-      usuniętych danych nie da się z niego przywrócić. Funkcja importu jest planowana.</p>
+      Eksport służy do wglądu we własne dane i do zabrania ich ze sobą — <strong>nie jest kopią zapasową</strong>,
+      ponieważ usuniętych danych nie da się z niego przywrócić. Funkcja importu jest planowana.</p>
 
-    <h3>Raporty o błędach — ważne zastrzeżenie</h3>
+    <h2 id="uprawnienia">7. Uprawnienia aplikacji</h2>
+
+    <p>Fortivo deklaruje jedno uprawnienie systemowe:</p>
+
+    <ul>
+      <li><strong>Dostęp do internetu</strong> — wykorzystywany wyłącznie do wysłania raportu o błędzie, jeżeli
+        wyraziłeś na to zgodę. Przy wyłączonych raportach aplikacja nie nawiązuje żadnych połączeń sieciowych.</li>
+    </ul>
+
+    <p>Aplikacja nie prosi o dostęp do lokalizacji, aparatu, mikrofonu, kontaktów, plików ani do zdjęć. Eksport danych
+      korzysta z systemowego okna udostępniania, które nie wymaga uprawnienia do pamięci urządzenia.</p>
+
+    <h2 id="beta">8. Testy zamknięte</h2>
+
+    <p>Jeżeli bierzesz udział w zamkniętych testach Fortivo, administrator przetwarza dodatkowo dane wymienione niżej.
+      Punkt ten dotyczy wyłącznie uczestników programu testów.</p>
+
+    <h3 id="beta-dane">8.1 Jakie dane i po co</h3>
+
+    <div class="scroll-x">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Dane</th>
+            <th scope="col">Skąd i po co</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Adres e-mail powiązany z kontem Google</strong></td>
+            <td>Podajesz go, zgłaszając się do testów. Służy do dodania Cię do listy testerów w Google Play, bez czego
+              wersja testowa nie będzie dla Ciebie dostępna, oraz do kontaktu w sprawach dotyczących testów.</td>
+          </tr>
+          <tr>
+            <td><strong>Treść uwag przesyłanych e-mailem</strong></td>
+            <td>To, co sam napiszesz. Służy do poprawiania aplikacji.</td>
+          </tr>
+          <tr>
+            <td><strong>Nazwa użytkownika i treść wiadomości na serwerze Discord</strong></td>
+            <td>Powstają, jeżeli dołączysz do grupowego kanału testerów. Kanał służy do bieżącego kontaktu, zgłaszania
+              uwag i informowania o nowych wersjach.</td>
+          </tr>
+          <tr>
+            <td><strong>Odpowiedzi w ankiecie kończącej testy</strong></td>
+            <td>Wypełniasz ją dobrowolnie. Służy do oceny, czy aplikacja spełnia swoje zadanie, i do decyzji o dalszym
+              rozwoju.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0" id="beta-discord">Zanim napiszesz coś na kanale grupowym</h3>
+      <p style="margin-bottom:0">Kanał na Discordzie jest <strong>widoczny dla pozostałych testerów</strong>, nie tylko
+        dla administratora. Widzą oni Twoją nazwę użytkownika i wszystko, co tam napiszesz lub załączysz. Nie umieszczaj
+        tam zrzutów ekranu z wagą, pomiarami ciała ani innymi informacjami, których nie chcesz pokazywać innym
+        uczestnikom — do takich zgłoszeń użyj e-maila. Administrator nie ma możliwości cofnięcia tego, co inni
+        uczestnicy zdążyli zobaczyć.</p>
+    </div>
+
+    <h3 id="beta-podstawa">8.2 Podstawa prawna, odbiorcy i okres przechowywania</h3>
+
+    <div class="legal">
+      <p><strong>Podstawa prawna:</strong> art. 6 ust. 1 lit. a RODO — Twoja zgoda, wyrażona przez zgłoszenie się do
+        testów, dołączenie do kanału grupowego lub wypełnienie ankiety. Zgodę możesz wycofać w każdej chwili, pisząc na
+        adres e-mail administratora; wycofanie nie wpływa na zgodność z prawem przetwarzania sprzed jego dokonania.</p>
+
+      <p><strong>Odbiorcy:</strong> Google (dystrybucja wersji testowej przez Google Play, obsługa poczty) oraz
+        Discord Inc. (prowadzenie kanału grupowego). Wobec Twojego konta na tych platformach ich operatorzy są
+        odrębnymi administratorami danych, na zasadach określonych w ich własnych politykach prywatności.
+        Administrator Fortivo odpowiada za dane, które sam gromadzi i przechowuje. Dane testerów nie są przekazywane
+        nikomu innemu.</p>
+    </div>
+
+    <div class="scroll-x">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Co</th>
+            <th scope="col">Jak długo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lista adresów e-mail testerów w Google Play</td>
+            <td>Do zamknięcia testów zamkniętych. Następnie usuwana z konsoli Google Play.</td>
+          </tr>
+          <tr>
+            <td>Treść uwag i zgłoszeń</td>
+            <td>Zachowywana, ponieważ służy do poprawiania aplikacji — po zakończeniu testów odłączana od adresów
+              e-mail i nazw użytkowników, przez co przestaje być powiązana z konkretną osobą.</td>
+          </tr>
+          <tr>
+            <td>Kanał testów zamkniętych na Discordzie</td>
+            <td>Kanał jest usuwany po zakończeniu testów, razem z historią wiadomości. Serwer Fortivo działa dalej —
+              jeżeli po testach na nim zostaniesz, Twoje członkostwo i wiadomości na pozostałych kanałach pozostają na
+              zasadach Discorda. W każdej chwili możesz usunąć własne wiadomości albo opuścić serwer.</td>
+          </tr>
+          <tr>
+            <td>Adres e-mail zachowany w celu przekazania obiecanego dostępu do funkcji płatnych</td>
+            <td>Wyłącznie za odrębną zgodą wyrażoną w ankiecie kończącej testy. Przechowywany do momentu przekazania
+              dostępu albo do wycofania zgody — w zależności od tego, co nastąpi wcześniej.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note">Administrator usuwa dane ze swoich zasobów, z konsoli Google Play i z serwera Discord. Nie ma
+      natomiast wpływu na to, jak długo i w jakim zakresie własne kopie przechowują Google i Discord — określają to ich
+      polityki prywatności.</p>
+
+    <h2 id="google-play">9. Pobranie ze sklepu Google Play</h2>
+
+    <p>Pobranie i aktualizowanie aplikacji odbywa się przez sklep Google Play. W związku z tym Google przetwarza dane
+      dotyczące Twojego konta i urządzenia, występując w tej roli jako <strong>odrębny administrator</strong>, na
+      zasadach określonych w polityce prywatności Google. Administrator Fortivo nie ma dostępu do tych danych;
+      w konsoli Google Play widzi wyłącznie zbiorcze, niepowiązane z konkretnymi osobami statystyki instalacji.</p>
+
+    <h2 id="bezpieczenstwo">10. Bezpieczeństwo danych</h2>
+
+    <p>W odniesieniu do danych, które faktycznie znajdują się pod kontrolą administratora — raportów o błędach
+      i danych uczestników testów — stosowane są następujące środki (art. 32 RODO):</p>
+
+    <ul>
+      <li>dostęp do konsoli Sentry, konsoli Google Play i konta Discord jest zabezpieczony uwierzytelnianiem
+        dwuskładnikowym;</li>
+      <li>dostęp do tych danych ma wyłącznie administrator — aplikacja nie jest rozwijana przez zespół, a dane nie są
+        udostępniane współpracownikom;</li>
+      <li>raporty o błędach nie są pobierane ani kopiowane poza usługę Sentry, w której podlegają automatycznemu
+        usunięciu po 30 dniach;</li>
+      <li>transmisja wszystkich danych opuszczających urządzenie jest szyfrowana (HTTPS);</li>
+      <li>aplikacja jest zaprojektowana tak, żeby minimalizować ilość danych opuszczających urządzenie — wynika to
+        z jej architektury, nie z późniejszych ustawień, i jest opisane w punktach 3 i 4.</li>
+    </ul>
+
+    <h2 id="prawa">11. Twoje prawa</h2>
+
+    <p>Zakres praw, które możesz wykonać, zależy od kategorii danych. Poniższa tabela wskazuje, co i wobec których
+      danych ma zastosowanie.</p>
+
+    <div class="scroll-x">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Prawo</th>
+            <th scope="col">Dane na urządzeniu</th>
+            <th scope="col">Raporty o błędach</th>
+            <th scope="col">Dane testerów</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dostęp i kopia (art. 15)</td>
+            <td>Nie dotyczy — administrator nie przetwarza. Pełny wgląd masz w aplikacji, kopię przez eksport.</td>
+            <td>Ograniczone — patrz niżej</td>
+            <td>Tak</td>
+          </tr>
+          <tr>
+            <td>Sprostowanie (art. 16)</td>
+            <td>Nie dotyczy — poprawiasz samodzielnie w aplikacji</td>
+            <td>Ograniczone — patrz niżej</td>
+            <td>Tak</td>
+          </tr>
+          <tr>
+            <td>Usunięcie (art. 17)</td>
+            <td>Nie dotyczy — usuwasz samodzielnie, patrz niżej</td>
+            <td>Ograniczone — patrz niżej</td>
+            <td>Tak</td>
+          </tr>
+          <tr>
+            <td>Ograniczenie przetwarzania (art. 18)</td>
+            <td>Nie dotyczy</td>
+            <td>Ograniczone — patrz niżej</td>
+            <td>Tak</td>
+          </tr>
+          <tr>
+            <td>Przenoszenie (art. 20)</td>
+            <td>Nie dotyczy — służy do tego eksport do pliku</td>
+            <td>Ograniczone — patrz niżej</td>
+            <td>Tak</td>
+          </tr>
+          <tr>
+            <td>Wycofanie zgody (art. 7 ust. 3)</td>
+            <td>Nie dotyczy</td>
+            <td>Tak — w Profilu lub e-mailem</td>
+            <td>Tak — e-mailem</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 id="prawa-lokalne">Dane na urządzeniu</h3>
+
+    <p>Danymi zapisanymi w Twoim telefonie zarządzasz samodzielnie: możesz je w każdej chwili edytować w aplikacji,
+      wyeksportować do pliku albo usunąć, czyszcząc dane aplikacji w ustawieniach systemu lub odinstalowując ją.
+      Pamiętaj przy tym o kopii zapasowej Google opisanej w punkcie 5.</p>
+
+    <h3 id="prawa-raporty">Raporty o błędach — istotne zastrzeżenie</h3>
 
     <p>Raporty o błędach są celowo zbudowane tak, żeby nie dało się na ich podstawie ustalić, kim jesteś. Jedynym
-      identyfikatorem w raporcie jest losowy identyfikator instalacji opisany w punkcie 3.1 — nie jest powiązany z
-      żadnym kontem, adresem e-mail ani innymi danymi kontaktowymi, bo aplikacja takich danych w ogóle nie zbiera.</p>
+      identyfikatorem w raporcie jest losowy identyfikator instalacji opisany w punkcie 4 — nie jest on powiązany
+      z żadnym kontem, adresem e-mail ani innymi danymi kontaktowymi, ponieważ aplikacja takich danych nie zbiera.</p>
 
-    <p>Oznacza to, że jeśli poprosisz mnie o dostęp do „swoich” raportów o błędach albo o ich usunięcie, <strong>nie
-        będę w stanie ustalić, które z nich pochodzą od Ciebie</strong>. Zgodnie z art. 11 ust. 2 RODO nie mam obowiązku
-      zbierać dodatkowych informacji wyłącznie po to, żeby Cię zidentyfikować — i celowo tego nie robię, bo oznaczałoby
-      to zbieranie większej ilości danych, niż potrzeba. W takiej sytuacji poinformuję Cię o tym w odpowiedzi na
-      wniosek.</p>
+    <p>Oznacza to, że jeżeli poprosisz o dostęp do „swoich" raportów albo o ich usunięcie, <strong>administrator nie
+        będzie w stanie ustalić, które z nich pochodzą od Ciebie</strong>. Zgodnie z art. 11 ust. 1 RODO administrator
+      nie ma obowiązku zbierać dodatkowych informacji wyłącznie po to, żeby Cię zidentyfikować — i celowo tego nie
+      robi, ponieważ oznaczałoby to gromadzenie większej ilości danych, niż jest potrzebne.</p>
 
-    <p>Jeśli chcesz mieć pewność, że nie wysyłasz raportów o błędach, wyłącz je w aplikacji: <em>Profil → Wysyłaj
+    <p>Zgodnie z art. 11 ust. 2 RODO możesz jednak <strong>samodzielnie dostarczyć informacje pozwalające Cię
+        zidentyfikować</strong>. W praktyce pomocne będą: przybliżona data i godzina wystąpienia błędu, model
+      urządzenia i wersja systemu Android oraz opis tego, co robiłeś w aplikacji. Administrator podejmie wtedy próbę
+      odnalezienia odpowiadających zgłoszeń i poinformuje Cię o wyniku — łącznie z sytuacją, w której jednoznaczne
+      przypisanie raportu do Ciebie okaże się niemożliwe.</p>
+
+    <p>Jeżeli chcesz mieć pewność, że nie wysyłasz raportów o błędach, wyłącz je w aplikacji: <em>Profil → Wysyłaj
         raporty o błędach</em>.</p>
 
-    <h3>Skarga do organu nadzorczego</h3>
+    <h3 id="prawa-skarga">Skarga do organu nadzorczego</h3>
 
-    <p>Jeżeli uważasz, że przetwarzam Twoje dane niezgodnie z prawem, możesz wnieść skargę do Prezesa Urzędu Ochrony
-      Danych Osobowych:</p>
+    <p>Jeżeli uważasz, że Twoje dane są przetwarzane niezgodnie z prawem, możesz wnieść skargę do Prezesa Urzędu
+      Ochrony Danych Osobowych:</p>
 
     <p class="note">
       Urząd Ochrony Danych Osobowych<br>
@@ -390,40 +725,54 @@
       <a href="https://uodo.gov.pl">uodo.gov.pl</a>
     </p>
 
-    <h2>6. Czego nie robię</h2>
+    <h2 id="czego-nie-robie">12. Czego aplikacja nie robi</h2>
 
     <ul>
-      <li>Nie wyświetlam reklam i nie współpracuję z sieciami reklamowymi.</li>
-      <li>Nie sprzedaję ani nie udostępniam danych podmiotom trzecim w celach marketingowych.</li>
-      <li>Nie stosuję profilowania ani zautomatyzowanego podejmowania decyzji wywołujących wobec Ciebie skutki prawne.
+      <li>Nie wyświetla reklam i nie współpracuje z sieciami reklamowymi.</li>
+      <li>Nie sprzedaje ani nie udostępnia danych podmiotom trzecim w celach marketingowych.</li>
+      <li>Nie stosuje profilowania ani zautomatyzowanego podejmowania decyzji wywołujących wobec Ciebie skutki prawne.
       </li>
-      <li>Nie zbieram danych o Twojej lokalizacji — ani z GPS, ani wyprowadzanych z adresu IP. Aplikacja nie prosi o
-        uprawnienie do lokalizacji.</li>
-      <li>Nie korzystam z narzędzi analityki produktowej śledzących, jak korzystasz z aplikacji. Jedyne dane techniczne,
-        jakie do mnie docierają, to te opisane w punkcie 3.1 — służą wykrywaniu awarii, nie obserwowaniu Twoich
-        zachowań.</li>
-      <li>Nie wymagam zakładania konta ani podawania jakichkolwiek danych osobowych, żeby korzystać z aplikacji.</li>
+      <li>Nie zbiera danych o lokalizacji — ani z GPS, ani wyprowadzanych z adresu IP. Aplikacja nie prosi
+        o uprawnienie do lokalizacji.</li>
+      <li>Nie korzysta z narzędzi analityki produktowej śledzących sposób korzystania z aplikacji. Jedyne dane
+        techniczne, jakie docierają do administratora, to te opisane w punkcie 4 — służą wykrywaniu awarii, nie
+        obserwowaniu Twoich zachowań.</li>
+      <li>Nie wymaga zakładania konta ani podawania jakichkolwiek danych osobowych, żeby z niej korzystać.</li>
     </ul>
 
-    <h2>7. Wiek użytkownika</h2>
+    <h2 id="wiek">13. Wiek użytkownika</h2>
 
-    <p>Fortivo jest przeznaczona dla osób pełnoletnich (18 lat i więcej). Nie jest kierowana do dzieci ani młodzieży i
-      świadomie nie zbieram danych osób poniżej 18. roku życia. Jeżeli jesteś rodzicem lub opiekunem i uważasz, że
-      dziecko przekazało mi jakiekolwiek dane, napisz na podany adres e-mail — usunę je.</p>
+    <p>Fortivo jest kierowana do osób, które ukończyły <strong>16 lat</strong>. Próg wynika z art. 8 RODO w polskiej
+      implementacji: zgoda na przetwarzanie danych w związku z usługami społeczeństwa informacyjnego jest ważna od
+      16. roku życia, a wysyłanie raportów o błędach opiera się właśnie na zgodzie.</p>
 
-    <h2>8. Zmiany polityki</h2>
+    <p>Administrator nie zbiera świadomie zgód od osób poniżej tego wieku. Jeżeli jesteś rodzicem lub opiekunem
+      i uważasz, że dziecko poniżej 16 lat wyraziło w aplikacji zgodę na wysyłanie raportów o błędach, napisz na
+      podany adres e-mail — zgoda zostanie unieważniona, a związane z nią dane usunięte w zakresie, w jakim da się je
+      zidentyfikować.</p>
 
-    <p>Jeżeli zmienię sposób działania aplikacji w sposób wpływający na prywatność, zaktualizuję ten dokument i zmienię
-      datę na jego początku. O istotnych zmianach poinformuję dodatkowo w aplikacji lub w opisie aktualizacji w Google
-      Play.</p>
+    <p class="note">Aplikacja nie zbiera daty urodzenia ani żadnej innej informacji o wieku i nie weryfikuje go
+      technicznie — weryfikacja wymagałaby zbierania większej ilości danych, niż jest potrzebne do działania dziennika
+      treningowego.</p>
 
-    <h2>9. Kontakt</h2>
+    <h2 id="zmiany">14. Zmiany polityki</h2>
+
+    <p>Jeżeli sposób działania aplikacji zmieni się w sposób wpływający na prywatność, dokument zostanie
+      zaktualizowany, a numer wersji i data u góry strony — zmienione. O istotnych zmianach administrator poinformuje
+      dodatkowo w aplikacji lub w opisie aktualizacji w Google Play.</p>
+
+    <p>Numer wersji dokumentu jest zapisywany razem z Twoją zgodą na wysyłanie raportów o błędach, dzięki czemu wiadomo,
+      na którą wersję polityki zgoda została udzielona. Poprzednie wersje dokumentu są dostępne na żądanie, pod
+      adresem e-mail administratora.</p>
+
+    <h2 id="kontakt">15. Kontakt</h2>
 
     <p>Pytania, wnioski i sprzeciwy: <a href="mailto:mkaminski.contact@gmail.com">mkaminski.contact@gmail.com</a></p>
 
-    <p class="note">Odpowiadam bez zbędnej zwłoki, co do zasady w ciągu miesiąca od otrzymania wiadomości, z możliwością
-      przedłużenia o dwa miesiące w sprawach szczególnie skomplikowanych (art. 12 ust. 3 RODO). Nie proszę o skan dowodu
-      ani żadne dodatkowe dokumenty — zbieram tylko te informacje, które są niezbędne, żeby odpowiedzieć na wniosek.</p>
+    <p class="note">Administrator odpowiada bez zbędnej zwłoki, co do zasady w ciągu miesiąca od otrzymania
+      wiadomości, z możliwością przedłużenia o dwa miesiące w sprawach szczególnie skomplikowanych (art. 12 ust. 3
+      RODO). Rozpatrzenie wniosku nie wymaga przesyłania skanu dokumentu tożsamości ani innych dodatkowych dokumentów
+      — zbierane są wyłącznie informacje niezbędne do udzielenia odpowiedzi.</p>
 
     <footer>
       Fortivo — aplikacja do planowania i śledzenia treningów siłowych.<br>
