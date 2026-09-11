@@ -263,7 +263,7 @@
   <div class="wrap">
 
     <h1>Polityka prywatności aplikacji Fortivo</h1>
-    <p class="updated">Wersja dokumentu: <strong>2026-09-04</strong> · Ostatnia aktualizacja: 4 września 2026</p>
+    <p class="updated">Wersja dokumentu: <strong>2026-09-11</strong> · Ostatnia aktualizacja: 11 września 2026</p>
 
     <div class="card">
       <h2 id="skrot">Najważniejsze w skrócie</h2>
@@ -499,12 +499,19 @@
 
     <h2 id="uprawnienia">7. Uprawnienia aplikacji</h2>
 
-    <p>Fortivo deklaruje jedno uprawnienie systemowe:</p>
+    <p>Fortivo deklaruje dwa uprawnienia systemowe:</p>
 
     <ul>
       <li><strong>Dostęp do internetu</strong> — wykorzystywany wyłącznie do wysłania raportu o błędzie, jeżeli
         wyraziłeś na to zgodę. Przy wyłączonych raportach aplikacja nie nawiązuje żadnych połączeń sieciowych.</li>
+      <li><strong>Sprawdzanie stanu połączenia sieciowego</strong> — pozwala ustalić, czy urządzenie ma dostęp do
+        internetu, zanim aplikacja spróbuje wysłać raport o błędzie. Nie daje dostępu do żadnych danych ani do
+        informacji o tym, z jakiej sieci korzystasz.</li>
     </ul>
+
+    <p class="note">W pakiecie aplikacji znajduje się dodatkowo uprawnienie techniczne generowane automatycznie przez
+      biblioteki systemu Android (<code>DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>). Działa wyłącznie wewnątrz
+      aplikacji, jest chronione jej podpisem i nie daje dostępu do żadnych danych.</p>
 
     <p>Aplikacja nie prosi o dostęp do lokalizacji, aparatu, mikrofonu, kontaktów, plików ani do zdjęć. Eksport danych
       korzysta z systemowego okna udostępniania, które nie wymaga uprawnienia do pamięci urządzenia.</p>
